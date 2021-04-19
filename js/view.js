@@ -8,8 +8,6 @@ export default class View {
     this.input.type = 'text'
     this.input.placeholder = 'Add todo'
     this.input.name = 'todo'
-
-    console.log(this.input)
   }
 
   get _todoText() {
@@ -72,6 +70,8 @@ export default class View {
         this.todoList.append(li)
       })
     }
+      // Debugging
+      console.log(todos)
   }
 
   bindAddTodo(handler) {
@@ -79,7 +79,7 @@ export default class View {
       event.preventDefault()
   
       if (this._todoText) {
-        console.log(handler(this._todoText))
+        handler(this._todoText)
         this._resetInput()
       }
     })
